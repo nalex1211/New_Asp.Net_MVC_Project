@@ -1,0 +1,16 @@
+﻿<div class="text-center; border p-3 mt-5 rounded">
+    <h1 class="display-4">Добро пожаловать, черти))</h1>
+
+    <p style="font-size:30px">
+        Вообщем это сайт который я вам когда то уже кидал(с заметками). Тут вы можете оставить свои любые заметки)
+    </p>
+</div>
+<label style="font-size:30px;text-align:center;display:block" asp-validation-for="@User.Identity.IsAuthenticated" class="text-danger">@TempData["Error"]</label>
+<div>
+    <form class="mt-3">
+        <button style="font-size:30px; border-collapse: separate;border-radius: 7px;border-style: solid" class="btn btn-primary" asp-area="" asp-controller="Note" asp-action="AddNote">
+            Добавить заметку
+        </button>
+        <button style="font-size:30px; border-collapse: separate;border-radius: 7px;border-style: solid"  class="btn btn-primary" asp-area="" asp-controller="Note" asp-action="AllNotes">Все заметки</button>
+    </form>
+</div>

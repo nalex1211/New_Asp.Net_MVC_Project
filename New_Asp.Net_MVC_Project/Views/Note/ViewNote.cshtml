@@ -1,0 +1,16 @@
+﻿@model NoteData
+
+<div class="NoteTable p-3 mt-4">
+    <div class="mb-3">
+        <label asp-for="Title" style="font-size:30px">Название</label>
+        <label asp-for="Title" class="Labels">@Model.Title</label>
+    </div
+
+     <div class="mb-3">
+        <label asp-for="NoteContent" style="font-size:30px">Содержимое</label>
+        <textarea disabled asp-for="NoteContent" style="font-size:30px; height:600px;resize:none;background-color:#FFF !important;border: 1px;border-radius: 5px;border-collapse: separate;border-color: #E8E8E8;border-style: solid;display: block;" class="form-control">@Model.NoteContent</textarea>
+    </div>
+    <form>
+       <button style="font-size:30px; border-collapse: separate;border-radius: 7px;border-style: solid;background-color:#3B3B3B" class="btn btn-primary" asp-for="" asp-controller="Note" asp-action="AllNotes">Вернуться ко всем заметкам</button>
+    </form>
+</div>

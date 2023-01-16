@@ -1,0 +1,92 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.NoteTable {
+    border-collapse: separate;
+    border-radius: 20px;
+    border: 1px;
+    border-style: solid;
+    border-color: #E8E8E8;
+    font-size: 30px
+}
+
+.Td {
+    border: 1px;
+    border-color: black;
+}
+
+.Buttons {
+    border-collapse: separate;
+    border-radius: 5px;
+    border-style: solid;
+    border: 1px;
+    border-color: black;
+}
+
+.TableButtons {
+    border: 0px;
+    font-size: 30px;
+    background-color: transparent;
+    text-align: left;
+    width: 100%
+}
+
+.Labels {
+    font-size: 30px;
+    border: 1px;
+    border-radius: 5px;
+    border-collapse: separate;
+    border-color: #E8E8E8;
+    border-style: solid;
+    display: block;
+    width: 100%
+}
+
+button {
+    font-size: 30px;
+}
+
+.li-right {
+    float: right
+}
+
+li {
+    font-size: 20px
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+.Centered {
+    display:flex;
+    justify-content:center;
+    align-items:center
+}
+
+span.field-validation-error {
+    white-space: pre-line;
+}
+
+input[type=checkbox] {
+    transform: scale(1.6);
+}
+

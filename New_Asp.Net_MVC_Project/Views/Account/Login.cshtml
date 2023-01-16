@@ -1,0 +1,47 @@
+﻿@model Login
+
+@{
+    ViewData["Title"] = "Login";
+}
+<script>
+    function myFunction() {
+        var x = document.getElementById("myInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+<div class="NoteTable p-3 mt-4">
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="col-md-12 alert-danger">
+            <span>@TempData["Error"]</span>
+        </div>
+    }
+    <form asp-action="Login">
+        <div class="mb-3">
+            <label style="font-size:30px" asp-for="Email">Почта</label>
+            <input type="email" asp-for="Email" style="font-size:30px" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Password" style="font-size:30px">Пароль</label>
+            <input type="password" asp-for="Password" style="font-size:30px" class="form-control" id="myInput" />
+            <div style="margin-left:5px; margin-top:10px">
+                <input type="checkbox" onclick="myFunction()"/>
+                    Show password
+            </div>
+            <div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <a asp-area="" asp-asp-controller="Account" asp-action="ForgotPassword">Забыли пароль?</a>
+        </div>
+
+        <button style="font-size:30px; border-collapse: separate;border-radius: 7px;border-style: solid" class="btn btn-primary" asp-for="" asp-controller="Account" asp-action="Login">Войти</button>
+        <button style="font-size:30px; border-collapse: separate;border-radius: 7px;border-style: solid;background-color:#3B3B3B" class="btn btn-primary" asp-for="" asp-controller="Home" asp-action="Index">Вернуться на главную страницу</button>
+    </form>
+</div>

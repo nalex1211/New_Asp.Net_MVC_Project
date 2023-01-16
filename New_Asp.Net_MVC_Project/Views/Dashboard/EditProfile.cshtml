@@ -1,0 +1,31 @@
+﻿@model ApplicationUser
+
+<div class="NoteTable p-3 mt-4">
+    <input type="hidden" id="Id" name="Id" asp-for="Id" />
+    @if (TempData["Error"] != null)
+    {
+            <div class="col-md-12 alert-danger">
+                <span>@TempData["Error"]</span>
+            </div>
+    }
+    <form method="post" asp-action="EditProfile">
+        <div class="mb-3">
+            <label asp-for="FristName" style="font-size:30px">Имя(необязательно)</label>
+            <input asp-for="FristName" style="font-size:30px" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="LastName" style="font-size:30px">Фамилия(необязательно)</label>
+            <input asp-for="LastName" style="font-size:30px" class="form-control"/>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="UserName" style="font-size:30px">Никнейм</label>
+            <input asp-for="UserName" style="font-size:30px" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+
+        <button style="font-size:30px; border-collapse: separate;border-radius: 7px;border-style: solid" class="btn btn-primary" asp-for="" asp-controller="Dashboard" asp-action="EditProfile">Сохранить изменения</button>
+        <button style="font-size:30px; border-collapse: separate;border-radius: 7px;border-style: solid;background-color:#3B3B3B" class="btn btn-primary" asp-for="" asp-controller="Note" asp-action="AllNotes">Вернуться на главную страницу</button>
+    </form>
+</div>

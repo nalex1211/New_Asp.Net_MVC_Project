@@ -1,0 +1,41 @@
+﻿@model New_Asp.Net_MVC_Project.ViewModels.DashboardViewModel
+<h1 class="mt-4">Your notes</h1>
+
+<table class="mt-4 p-2" style="width:100%">
+    <tr>
+        <th>Название</th>
+        <th>Дата создания</th>
+        <th>Действия</th>
+    </tr>
+
+    @foreach (var obj in Model.Notes)
+    {
+            <tr>
+                <td width="50%" class="NoteTable">
+                    <div>
+                        <form>
+                            <button class="TableButtons" asp-controller="Note" asp-action="ViewNote" asp-route-id="@obj.Id">
+                                @obj.Title
+                            </button>
+                        </form>
+                    </div>
+                </td>
+
+                <td class="NoteTable">@obj.CreationTime</td>
+                <td width="20%" class="NoteTable">
+                    <div class="mt-2 mb-2">
+                        <form>
+                        <button style="font-size:25px; border-collapse: separate;border-radius: 7px;border-style: solid;" class="btn btn-primary" class="btn btn-primary" asp-controller="Note" asp-action="EditNote" asp-route-id="@obj.Id">
+                                Редактировать
+                            </button>
+                        </form>
+                        <form asp-controller="Note" asp-action="DeleteNote" asp-route-id="@obj.Id">
+                        <button style="font-size:25px; border-collapse: separate;border-radius: 7px;border-style: solid;width:100%;background-color:#871818" class="btn btn-danger mt-2">Удалить</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        
+    }
+
+</table>
